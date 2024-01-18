@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if _ _name__ == "__main__":
+if __name__ == "__main__":
     """Print the sume of 1 and 2."""
     from add_0 import add
 
