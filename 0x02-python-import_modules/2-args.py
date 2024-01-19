@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
+    """Print number of list of args."""
     import sys
 
     number_args = len(sys.argv) - 1
@@ -11,5 +12,5 @@ if __name__ == "__main__":
         print("1 argument.")
     else:
         print("{} arguments:".format(number_args))
-        for j in range(number_args):
-            print("{}: {}".format(j + 1, sys.argv[i + 1]))
+    for j in range(number_args):
+        print("{}: {}".format(j + 1, sys.argv[j + 1]))
