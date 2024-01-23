@@ -3,9 +3,9 @@
 #include <object.h>
 #include <listobject.h>
 
-voiid print_python_list_info(PyObject *p)
+void print_python_list_info(PyObject *p)
 {
-	PyListObject *List = (PyListObject *)p;
+	PyListObject *list = (PyListObject *)p;
 	Py_ssize_t size, i;
 	PyObject *element;
 
