@@ -7,7 +7,7 @@ def print_sorted_dictionary(a_dictionary):
     for key in sort_key:
         value = a_dictionary[key]
 
-        if isinstance(vallue, dict):
+        if isinstance(value, dict):
             print(f"{key}:")
             print_sorted_dictionary(value)
         else:
