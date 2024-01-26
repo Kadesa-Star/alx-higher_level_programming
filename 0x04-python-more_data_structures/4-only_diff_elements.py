@@ -1,13 +1,9 @@
 #!/usr/bin/python3
 def only_diff_elements(set_1, set_2):
-    diff = set()
+    # combine the two sets to get unique elements
+    all_uniq = set_1.union(set_2)
 
-    for element in set_1:
-        if element not in set_2:
-            diff.add(element)
-        else:
-            for element in set_2:
-                if element not in set_1:
-                    diff.add(element)
+    # calculate the symmetric
+    only_diff = set_1.symmetric_difference(set_2)
 
-    return (diff)
+    return (only_diff)
