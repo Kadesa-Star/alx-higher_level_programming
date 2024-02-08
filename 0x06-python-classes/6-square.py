@@ -5,7 +5,7 @@
 class Square:
     """a class square that defines  as square based on 0-square.py"""
 
-    def __init__(self, size=0, position=(0, 0)):
+    def __init__(self, size=0, position= (0, 0)):
         """this initializes a square with given size.
 
 
@@ -61,8 +61,8 @@ class Square:
         """
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
-                not all(isinstance(m, int) for m in value)) or \
-                not all(m >= 0 for m in value):
+                not all(isinstance(m, int) for m in value) or \
+                not all(m >= 0 for m in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
 
         self.__position = value
