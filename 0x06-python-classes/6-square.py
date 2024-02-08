@@ -11,7 +11,7 @@ class Square:
 
         Args:
             size (int): size of the square
-            position (int): the position of the new square
+            position (int, int): the position of the new square
 
         Raises:
             TypeError: whenever size is not int
