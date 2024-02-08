@@ -11,12 +11,14 @@ class Square:
 
         Args:
             size (int): size of the square
+            position (int): the position of the new square
 
         Raises:
             TypeError: whenever size is not int
             ValueError: whenever size is less than 0
         """
         self.size = size
+        self.position = position
 
     @property
     def size(self):
