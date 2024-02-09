@@ -75,7 +75,9 @@ class SinglyLinkedList:
         result = ""
         current = self.head
         while current:
-            result += str(current.data) + "\n"
+            result += str(current.data)
+            if current.next_node is not None:
+                result += "\n"
             current = current.next_node
         return result
 
