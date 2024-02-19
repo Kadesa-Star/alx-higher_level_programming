@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" defines an function that checks an inherites class """
+""" Defines an function that checks an inherites clast. """
 
 
 def inherits_from(obj, a_class):
@@ -16,7 +16,6 @@ def inherits_from(obj, a_class):
         True if the object is an instance of a clasd
         False otherwise
     """
-
     if issubclass(type(obj), a_class) and type(obj) != a_class:
         return True
 
