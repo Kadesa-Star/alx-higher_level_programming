@@ -2,7 +2,7 @@
 """ defines returns True if object is an instance of a  class """
 
 
-is_kind_of_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """
     Check if an object is a class or inherited instance
 
