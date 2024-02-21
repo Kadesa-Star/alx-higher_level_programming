@@ -24,7 +24,7 @@ class Student:
         Args:
             attrs (list of str, optional): A list of attribute names
         """
-        if (type(attrs) == list and
+        if (type(attrs) is list and
                 all(type(elem) is str for elem in attrs)):
             return {k: getattr(self, k) for k in
                     attrs if hasattr(self, k)}
