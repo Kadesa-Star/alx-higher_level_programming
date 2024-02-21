@@ -3,7 +3,7 @@
 
 
 def pascal_triangle(n):
-    """ this function returns a list of integers representing 
+    """ this function returns a list of integers representing
     the pascal's triangle """
 
     # returns a n empty list
