@@ -39,5 +39,5 @@ class Student:
             json (dict): A dictionary containing attribute
             names and values.
         """
-        for key, value i n json.items():
+        for key, value in json.items():
             setattr(self, key, value)
