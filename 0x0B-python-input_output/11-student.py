@@ -40,4 +40,4 @@ class Student:
             names and values.
         """
         for key, value i n json.items():
-            setattr(self, keey, value)
+            setattr(self, key, value)
