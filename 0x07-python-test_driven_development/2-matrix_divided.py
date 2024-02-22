@@ -14,20 +14,20 @@ def matrix_divided(matrix, div):
         list of lists: a new matarix
 
     Raises:
-        TypeError: If matrix is not a list of ints or loat
+        TypeError: If matrix is not a list of ints or float
         ZeroDivisionError: if div is equal to 0
         TypeError: if each row doesnt have same size
     """
     # validate matrix
-    if (not isinstance(matrix, list) or matrix == [] or
+    if (not isinstance(matrix, list) or
         not all(isinstance(row, list) for row in matrix) or
         not all((isinstance(element, int) or isinstance(element, float))
                 for element in [num for row in matrix for num in row])):
         raise TypeError("matrix must be a matrix (list of lists)"
-                        "of integers/floats")
+                        " of integers/floats")
 
     # check if each row of the matrix has the same size
-    if not all(len(row) == len(matrix[0]) for row in matrix):
+    if not matrix or not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
     # validate div
