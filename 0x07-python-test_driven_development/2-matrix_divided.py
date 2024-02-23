@@ -20,9 +20,17 @@ def matrix_divided(matrix, div):
     """
     # validate matrix
     if (not isinstance(matrix, list) or
-        not all(isinstance(row, list) for row in matrix) or
-        not all((isinstance(element, int) or isinstance(element, float))
-                for element in [num for row in matrix for num in row])):
+            not all(isinstance(row, list) for row in matrix)):
+        raise TypeError("matrix must be a matrix (list of lists)"
+                        " of integers/floats")
+
+    # check if the matrix is empty
+    if not matrix:
+        raise TypeError("matrix must be a matrix (list of lists)"
+                        " of integers/floats")
+
+    if not all((isinstance(element, int) or isinstance(element, float))
+               for element in [num for row in matrix for num in row]):
         raise TypeError("matrix must be a matrix (list of lists)"
                         " of integers/floats")
 
