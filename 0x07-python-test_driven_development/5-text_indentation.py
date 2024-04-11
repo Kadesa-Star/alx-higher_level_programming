@@ -22,7 +22,7 @@ def text_indentation(text):
         print(text[char], end="")
         if text[char] == '\n' or text[char] in '.?:':
             if text[char] in '.?:':
-                print ('\n')
+                print('\n')
             char += 1
             while char < len(text) and text[char] == ' ':
                 char += 1
