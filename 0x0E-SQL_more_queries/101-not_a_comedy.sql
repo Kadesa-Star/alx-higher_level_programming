@@ -5,11 +5,8 @@ USE hbtn_0d_tvshows;
 SELECT id INTO @comedy_id FROM tv_genres WHERE name = 'Comedy';
 
 -- Select all shows that are not linked to the "Comedy" genre
-SELECT title
-FROM tv_shows
-WHERE id NOT IN (
-    SELECT show_id
-    FROM tv_show_genres
-    WHERE genre_id = @comedy_id
-)
-ORDER BY title ASC;
+SELECT s.title
+FROM tv_shows s
+LEFT JOIN tv_show_genres sg ON s.id = sg.show_id AND sg.genre_id = @comedy_id
+WHERE sg.show_id IS NULL
+ORDER BY s.title ASC;
