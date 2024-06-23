@@ -1,6 +1,12 @@
 #!/usr/bin/python3
+"""
+Script to fetch and display from the database sorted by states.id
+"""
+
+
 import sys
 import MySQLdb
+
 
 if __name__ == "__main__":
     # check if the correct number of arguments are provided
@@ -23,7 +29,7 @@ if __name__ == "__main__":
     )
     cursor = connec.cursor()
     # Execute SQL query to fetch states sorted by id
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states")
     # fetch all rows
     states = cursor.fetchall()
 
