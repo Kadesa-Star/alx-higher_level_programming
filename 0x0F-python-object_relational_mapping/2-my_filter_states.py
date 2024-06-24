@@ -24,8 +24,8 @@ if __name__ == '__main__':
     cursor = conn.cursor()
 
     # execute SQL query to fetch states where name matches the argument
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}"
-                   .format(sys.argv[4]))
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' \
+                   ORDER BY states.id".format(sys.argv[4]))
 
     # Fetch all rows
     query_rows = cursor.fetchall()
