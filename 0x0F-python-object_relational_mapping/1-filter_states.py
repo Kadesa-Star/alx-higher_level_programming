@@ -31,7 +31,7 @@ if __name__ == '__main__':
     cursor = conn.cursor()
 
     # execute SQL query to fetch states starting with 'N' sorted by id
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id")
 
     # Fetch all rows
     query_rows = cursor.fetchall()
