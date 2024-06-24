@@ -2,15 +2,11 @@
 """
 script to fetch and display states with names starting with 'N'
 """
-import sys
+import sys import argv
 import MySQLdb
 
 
 if __name__ == '__main__':
-    # check if the correct number of arguments is provided
-    if len(sys.argv) != 4:
-        sys.exit('Usage: ./1-filter_states.py <mysql username> <mysql password> <database name>'>)
-
     # Retrieve command line arguments
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -23,13 +19,14 @@ if __name__ == '__main__':
             user=mysql_username,
             passwd=mysql_password,
             db=database_name,
-            charset='utf8'
             )
     # create a cursor object using cursor() method
     cursor = conn.cursor()
 
     # execute SQL query to fetch states starting with 'N' sorted by id
-    cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id""")
+    cursor.execute("SELECT * FROM states \
+                    WHERE name LIKE BINARY 'N%' \
+                    ORDER BY states.id")
 
     # Fetch all rows
     query_rows = cursor.fetchall()
