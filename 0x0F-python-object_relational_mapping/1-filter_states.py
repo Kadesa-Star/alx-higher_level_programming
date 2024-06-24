@@ -2,7 +2,7 @@
 """
 script to fetch and display states with names starting with 'N'
 """
-import sys import argv
+import sys
 import MySQLdb
 
 
