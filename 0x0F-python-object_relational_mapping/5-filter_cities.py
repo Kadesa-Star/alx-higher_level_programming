@@ -28,7 +28,7 @@ if __name__ == '__main__':
     cursor = conn.cursor()
 
     # execute SQL query to fetch all cities, joining with states to get names
-    query = ("SELECT cities.id, cities.name "
+    query = ("SELECT cities.name "
              "FROM cities JOIN states ON cities.state_id = states.id "
              "WHERE states.name = %s "
              "ORDER BY cities.id")
@@ -38,8 +38,8 @@ if __name__ == '__main__':
     query_rows = cursor.fetchall()
 
     # display results
-    for row in query_rows:
-        print(row)
+    cities = [row[0] for row in query_rows]
+    print(", ".join(cities))
 
     # close cursor and connection
     cursor.close()
