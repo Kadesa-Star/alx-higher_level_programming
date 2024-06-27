@@ -27,7 +27,7 @@ if __name__ == '__main__':
     cursor = conn.cursor()
 
     # execute SQL query to fetch states where name matches the argument
-    query = "SELECT * FROM states WHERE name = %s ORDER BY ID"
+    query = "SELECT * FROM states WHERE name LIKE %s"
     cursor.execute(query, (state_name))
 
     # fetch all rows
