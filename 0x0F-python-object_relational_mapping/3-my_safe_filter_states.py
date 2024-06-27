@@ -12,6 +12,7 @@ if __name__ == '__main__':
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
+    state_name = sys.argv[4]
 
     # connect to MySQL server
     conn = MySQLdb.connect(
@@ -26,8 +27,8 @@ if __name__ == '__main__':
     cursor = conn.cursor()
 
     # execute SQL query to fetch states where name matches the argument
-    match = sys.argv[4]
-    cursor.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
+    query = ("SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id")
+    cursor.execute(query, (state_name,))
 
     # fetch all rows
     query_rows = cursor.fetchall()
