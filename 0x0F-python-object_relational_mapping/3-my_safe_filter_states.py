@@ -3,6 +3,7 @@
 Script to fetch and display states where name mataches the argument
 """
 
+
 import sys
 import MySQLdb
 
@@ -20,7 +21,7 @@ if __name__ == '__main__':
         port=3306,
         user=mysql_username,
         passwd=mysql_password,
-        db=databse_name,
+        db=database_name,
     )
 
     # create a cursor object using cursor() method
