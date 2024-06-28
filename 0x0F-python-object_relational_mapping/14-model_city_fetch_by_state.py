@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 from model_city import City
 
+
 if __name__ == "__main__":
     # Database connection
     engine = create_engine(
@@ -15,6 +16,7 @@ if __name__ == "__main__":
     )
 
     # Create a configured "Session" class
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
 
     # Create a session
