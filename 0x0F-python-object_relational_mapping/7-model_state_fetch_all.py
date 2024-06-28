@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all State objects from the database hbtn_0e_6_usa
+Script to list all State objects from the database hbtn_0e_6_usa.
 """
 
 import sys
@@ -8,31 +8,24 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-if __name__ == "__main__":
-    # Retrieve command line arguments
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
 
-    # Create engine to connect to the MySQL server
-       engine = create_engine(
-                               f'mysql+mysqldb://{mysql_username}\
-                                :{mysql_password}@localhost/{database_name}',
-        pool_pre_ping=True
-    )
+if __name__ == "__main__":
+    # Database connection
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
 
-    # Create a Session
+    # Create a session
     session = Session()
 
-    # Query all State objects and sort them by id
+    # Query all State objects, sorted by id
     states = session.query(State).order_by(State.id).all()
 
-    # Display the results
+    # Print results
     for state in states:
-        print(f"{state.id}: {state.name}")
+        print("{}: {}".format(state.id, state.name))
 
-    # Close the session
+    # Close session
     session.close()
