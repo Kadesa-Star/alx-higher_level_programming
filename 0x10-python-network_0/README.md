@@ -27,7 +27,6 @@ By the end of this project, you will be able to explain to anyone:
 - Understanding what happens at the application level when you type a URL in a browser
 
 ## Requirements
-
 ### General
 - Allowed editors: vi, vim, emacs
 - All scripts tested on Ubuntu 20.04 LTS
