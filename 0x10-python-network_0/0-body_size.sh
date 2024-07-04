@@ -11,7 +11,7 @@ fi
 URL=$1
 
 # Use curl to send a request to the URL and measure the size of the response body
-SIZE=$(curl -sI "$URL" | grep -i 'Content-Length' | awk '{print $2}' | tr -d '\r\n')
+SIZE=$(curl -s "$URL" | wc -c)
 
 # Print the size of the body in bytes
 echo "$SIZE"
