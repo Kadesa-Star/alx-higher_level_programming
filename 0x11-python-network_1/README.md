@@ -36,5 +36,3 @@ By completing this project, you will gain proficiency in:
 
 ## Setup
 To run the scripts, ensure you have Python 3.8.5 installed and use an editor like vi, vim, or emacs for editing.
-
-
