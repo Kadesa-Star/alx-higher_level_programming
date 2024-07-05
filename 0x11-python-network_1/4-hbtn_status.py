@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-"""
-Fetches https://alx-intranet.hbtn.io/status using the requests package.
-Displays the body of the response in a specific format.
-"""
+"""Fetches https://alx-intranet.hbtn.io/status using requests."""
 
 import requests
 
 if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
     response = requests.get(url)
+
     print("Body response:")
     print(f"\t- type: {type(response.content)}")
-    print(f"\t- content: {response.content}")
-    print(f"\t- utf8 content: {response.text}")
+    print(f"\t- content: {response.content.decode('utf-8')}")
+    print(f"\t- utf8 content: {response.content.decode('utf-8')}")
