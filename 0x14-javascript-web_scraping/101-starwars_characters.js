@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-// Check if the correct number of arguments is provided
+// Ensure exactly one argument (Movie ID) is provided
 if (process.argv.length !== 3) {
   console.error('Usage: ./101-starwars_characters.js <movie_id>');
   process.exit(1);
@@ -31,7 +31,7 @@ request(apiUrl, (error, response, body) => {
       return;
     }
 
-    // Create an array to hold character URLs
+    // Array of character URLs
     const characterUrls = movie.characters;
 
     // Function to fetch character data
@@ -43,6 +43,7 @@ request(apiUrl, (error, response, body) => {
         }
 
         try {
+          // Parse the character JSON response
           const character = JSON.parse(body);
           callback(character.name);
         } catch (parseError) {
@@ -51,7 +52,7 @@ request(apiUrl, (error, response, body) => {
       });
     };
 
-    // Function to process all characters
+    // Process and print all characters
     const processCharacters = (urls) => {
       let count = 0;
 
@@ -59,7 +60,7 @@ request(apiUrl, (error, response, body) => {
         fetchCharacterData(url, (name) => {
           console.log(name);
           count += 1;
-          // If all characters have been processed, exit the process
+          // Exit the process once all characters are printed
           if (count === urls.length) {
             process.exit(0);
           }
@@ -67,7 +68,7 @@ request(apiUrl, (error, response, body) => {
       });
     };
 
-    // Process all character URLs
+    // Start processing character URLs
     processCharacters(characterUrls);
   } catch (parseError) {
     console.error(parseError);
